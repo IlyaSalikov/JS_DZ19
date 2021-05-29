@@ -21,15 +21,20 @@
     // И еще одну функцию – для вывода в обратном порядке.
     /*let min = +prompt('Введите начальное число диапазона');
     let max = +prompt('Введите конечное число диапазона');
-    let arr = [];
-    function showRange(min, max) {
-        for (let i = 0; i < max; i++) {
-            if(max === 100) {
-                return arr.push(min);
-            }
+    function showRange(begin, end) {
+        if (end === begin) return end;
+        else {
+            return (`${begin}, ${showRange(begin + 1, end)}`);
         }
     }
-    console.log(showRange(arr));*/
+    function showRangeReverse(begin, end) {
+        if (end === begin) return end;
+        else {
+            return (`${end}, ${showRangeReverse(begin, end - 1)}`);
+        }
+    }
+    alert(showRange(min, max));
+    alert(showRangeReverse(min, max));*/
 
     //3. Написать функцию, которая выводит переданное ей число задом наперед.
     // Например: число 1234 вывести как 4321.
@@ -54,6 +59,15 @@
 
     //5. Написать функцию, которая принимает число и выводит соответствующее количество вложенных пар круглых скобок.
     // Например: число 4 – (((()))).
+    /*let x = +prompt('Введите число');
+    function f(n) {
+        if (n===0) {
+            return '';
+        } else {
+            return '(' + f(n-1) + ')';
+        }
+    }
+    document.write(f(x));*/
 </script>
 </body>
 </html>
